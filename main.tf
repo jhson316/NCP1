@@ -20,7 +20,7 @@ resource "ncloud_vpc" "hashicat" {
 
 resource "ncloud_network_acl" "hashicat" {
   vpc_no      = ncloud_vpc.hashicat.id
-  name        = "TEST-acl-public"
+  name        = "${var.prefix}-acl-public"
   description = "for Public And TEST"
 }
 
