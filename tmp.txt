@@ -1,0 +1,32 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] ncloud_network_acl.hashicat (expand)" [label = "ncloud_network_acl.hashicat", shape = "box"]
+		"[root] ncloud_vpc.hashicat (expand)" [label = "ncloud_vpc.hashicat", shape = "box"]
+		"[root] provider[\"registry.terraform.io/navercloudplatform/ncloud\"]" [label = "provider[\"registry.terraform.io/navercloudplatform/ncloud\"]", shape = "diamond"]
+		"[root] var.address_space" [label = "var.address_space", shape = "note"]
+		"[root] var.client_ip" [label = "var.client_ip", shape = "note"]
+		"[root] var.height" [label = "var.height", shape = "note"]
+		"[root] var.placeholder" [label = "var.placeholder", shape = "note"]
+		"[root] var.prefix" [label = "var.prefix", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.site" [label = "var.site", shape = "note"]
+		"[root] var.width" [label = "var.width", shape = "note"]
+		"[root] var.zone" [label = "var.zone", shape = "note"]
+		"[root] ncloud_network_acl.hashicat (expand)" -> "[root] ncloud_vpc.hashicat (expand)"
+		"[root] ncloud_vpc.hashicat (expand)" -> "[root] provider[\"registry.terraform.io/navercloudplatform/ncloud\"]"
+		"[root] ncloud_vpc.hashicat (expand)" -> "[root] var.address_space"
+		"[root] ncloud_vpc.hashicat (expand)" -> "[root] var.prefix"
+		"[root] provider[\"registry.terraform.io/navercloudplatform/ncloud\"] (close)" -> "[root] ncloud_network_acl.hashicat (expand)"
+		"[root] provider[\"registry.terraform.io/navercloudplatform/ncloud\"]" -> "[root] var.region"
+		"[root] provider[\"registry.terraform.io/navercloudplatform/ncloud\"]" -> "[root] var.site"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/navercloudplatform/ncloud\"] (close)"
+		"[root] root" -> "[root] var.client_ip"
+		"[root] root" -> "[root] var.height"
+		"[root] root" -> "[root] var.placeholder"
+		"[root] root" -> "[root] var.width"
+		"[root] root" -> "[root] var.zone"
+	}
+}
+
